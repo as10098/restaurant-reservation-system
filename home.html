@@ -1,3 +1,4 @@
+ <!-- Basic structure -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,8 @@
   <h1>Welcome to Our Restaurant!</h1>
 </body>
 </html>
+
+ <!-- Header and navigation -->
 <header>
     <h1>Welcome to Our Restaurant!</h1>
     <nav>
@@ -21,9 +24,27 @@
       </ul>
     </nav>
   </header>
+
+ <!-- Hero section -->
   <section id="hero">
     <h2>Make Your Reservation Today</h2>
     <p>Enjoy delicious meals and unforgettable experiences.</p>
   </section>
   
+  <!-- Reservation Form-->
+  <section id="reservation">
+    <h2>Reserve a Table</h2>
+    <form action="#" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+  
+      <label for="date">Reservation Date</label>
+      <input type="date" id="date" name="date" required>
+  
+      <label for="time">Reservation Time</label>
+      <input type="time" id="time" name="time" required>
+  
+      <button type="submit">Book a Table</button>
+    </form>
+  </section>
   
