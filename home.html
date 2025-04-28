@@ -1,202 +1,184 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant Reservation</title>
-  
-  <meta name="theme-color" content="#ffffff">
-</head>
-<body>
-  <h1>Welcome to Our Restaurant!</h1>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTAURANT</title>
 
-  <style>
-      body {
+    
+        <link rel="icon" href="/Users/aryansharma/Desktop/favicon.svg" type="image/svg+xml">
+        <meta name="theme-color" content="#ffffff"> 
+    
+      
+
+    <style>
+        body {
             font-family: 'Times New Roman', Times, serif;
             margin: 0;
             padding: 0;
             color: #fff;
         }
 
-        /* Navbar */
-nav {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        nav {
+            background-color: #333; 
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-nav h1 {
-    margin: 0;
-    font-size: 35px;
-}
+        nav h1 {
+            margin: 0;
+            font-size: 35px;
+        }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
 
-nav ul li {
-    margin-left: 20px;
-}
+        nav ul li {
+            margin-left: 20px;
+        }
 
-nav ul li a {
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
-}
+        nav ul li a {
+            background-color: #333; 
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px; 
+            transition: background-color 0.3s, transform 0.3s;
+        }
 
-nav ul li a:hover {
-    background-color: #f17b40;
-    transform: scale(1.05);
-}
-/* Hero Section */
-.hero {
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=jpg&q=60&w=3000');
-    background-size: cover;
-    background-position: center;
-    padding: 2rem;
-}
+        nav ul li a:hover {
+            background-color: #f17b40;
+            transform: scale(1.05); 
+        }
 
-.hero-content {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 90%;
-    margin: 0 auto;
-}
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
 
-.hero h2 {
-    margin-bottom: 10px;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
-}
+        .hero {
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=jpg&q=60&w=3000');
+            background-size: cover;
+            background-position: center;
+            padding: 2rem;
+        }
 
-.hero p {
-    font-size: 1.2rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-/* Buttons */
-.btn {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 3px;
-    transition: background-color 0.3s;
-    margin-top: 20px;
-    display: inline-block;
-}
+        .hero-content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 90%;
+            margin: 0 auto;
+        }
 
-.btn:hover {
-    background-color: #e29f4d;
-}
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-}
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav h1 {
-        font-size: 28px;
-    }
+        .hero h2 {
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+        }
 
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+        .hero p {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
 
-    nav ul li {
-        margin-left: 0;
-        margin-top: 10px;
-    }
+        .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
 
-    .hero h2 {
-        font-size: 2rem;
-    }
+        .btn:hover {
+            background-color: #e29f4d;
+        }
 
-    .hero p {
-        font-size: 1rem;
-    }
-}
+        @media (max-width: 768px) {
+            nav h1 {
+                font-size: 28px;
+            }
 
-@media (max-width: 480px) {
-    .hero-content {
-        padding: 15px;
-    }
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-    .btn {
-        padding: 10px;
-    }
-}
+            nav ul li {
+                margin-left: 0;
+                margin-top: 10px;
+            }
 
+            .hero h2 {
+                font-size: 2rem;
+            }
 
-  </style>
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content {
+                padding: 15px;
+            }
+
+            .btn {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>GETININ</h1>
+            <ul>
+                <li><a href="#home" class="btn">HOME</a></li>
+                <li><a href="/booking.html" class="btn">BOOK NOW</a></li>
+                <li><a href="/about.html" class="btn">ABOUT US</a></li>
+                <li><a href="#contact" class="btn">CONTACT US</a></li>
+                <li><a href="/faq.html" class="btn">FAQs</a></li>
+                <li><a href="/login.html" class="btn">LOGIN</a></li>
+                <li><a href="/signup.html" class="btn">SIGN UP</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h2>Welcome To Our Restaurant Reservation System</h2>
+            <a href="/booking.html" class="btn">Start Booking</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 RESTAURANT All rights reserved.</p>
+    </footer>
 </body>
 </html>
-
- <!-- Header and navigation -->
-<header>
-    <h1>Welcome to Our Restaurant!</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#reservation">Reservation</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
- <!-- Hero section -->
-  <section id="hero">
-    <h2>Make Your Reservation Today</h2>
-    <p>Enjoy delicious meals and unforgettable experiences.</p>
-  </section>
-  
-  <!-- Reservation Form-->
-  <section id="reservation">
-    <h2>Reserve a Table</h2>
-    <form action="#" method="POST">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required>
-  
-      <label for="date">Reservation Date</label>
-      <input type="date" id="date" name="date" required>
-  
-      <label for="time">Reservation Time</label>
-      <input type="time" id="time" name="time" required>
-  
-      <button type="submit">Book a Table</button>
-    </form>
-  </section>
-  
-<!-- Footer section-->
-<footer>
-    <p>&copy; 2025 Restaurant Name. All rights reserved.</p>
-  </footer>
-  
