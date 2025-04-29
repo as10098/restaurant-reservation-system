@@ -115,5 +115,35 @@
     <footer>
         <p>&copy; 2024 Restaurant Reservation System. All rights reserved.</p>
     </footer>
+    <script>
+        const restaurantData = {
+            "Chandigarh": ["Catch 22", "Barbequ Nation(Sector-26)", "Casa Bella Vista(Sector-10)"],
+            "Rajpura": ["Mayur Restaurant", "Dawat Restaurant", "Aangan Restaurant"],
+            "Mohali": ["JB's Kitchen", "Hops n Grains", "Daana Paani(Connaught Plaza Mohali)"]
+        };
+    
+        document.getElementById('location').addEventListener('change', function () {
+            const location = this.value;
+            updateRestaurantDropdown(location);
+        });
+    
+        function updateRestaurantDropdown(location) {
+            const restaurantSelect = document.getElementById('restaurant');
+            restaurantSelect.innerHTML = ''; // Clear previous options
+            const option = document.createElement('option');
+            option.value = '';
+            option.textContent = 'Select a restaurant';
+            restaurantSelect.appendChild(option);
+    
+            if (restaurantData[location]) {
+                restaurantData[location].forEach(restaurant => {
+                    const option = document.createElement('option');
+                    option.value = restaurant;
+                    option.textContent = restaurant;
+                    restaurantSelect.appendChild(option);
+                });
+            }
+        }
+    </script>
 </body>
 </html>
