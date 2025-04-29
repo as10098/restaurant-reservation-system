@@ -96,6 +96,24 @@
     <footer>
         <p>&copy; 2024 Restaurant Reservation System. All rights reserved.</p>
     </footer>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !phone || !message) {
+                alert("Please fill in all fields before submitting.");
+                return;
+            }
+
+            alert("Message sent successfully!\n\nDetails:\n" +
+                Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message});
+        });
+    </script>
 
 </body>
 </html>
