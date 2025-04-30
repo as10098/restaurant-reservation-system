@@ -191,6 +191,31 @@
   </footer>
 
   <script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault(); 
+
+    
+    const bookingData = {
+      location: document.getElementById("location").value,
+      restaurant: document.getElementById("restaurant").value,
+      name: document.getElementById("name").value,
+      date: document.getElementById("date").value,
+      time: document.getElementById("time").value,
+      guests: document.getElementById("guests").value,
+      contact: document.getElementById("contact").value,
+    };
+
+    
+    let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+    bookings.push(bookingData);
+    localStorage.setItem("bookings", JSON.stringify(bookings));
+
+    alert("Booking saved locally for demo!");
+
+    
+    this.reset();
+    document.getElementById("restaurant").innerHTML = "<option value=''>Select a location first</option>";
+  });
     const restaurantData = {
       "Chandigarh": ["Catch 22", "Barbequ Nation(Sector-26)", "Casa Bella Vista(Sector-10)"],
       "Rajpura": ["Mayur Restaurant", "Dawat Restaurant", "Aangan Restaurant"],
