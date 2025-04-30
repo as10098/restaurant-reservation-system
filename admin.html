@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Bookings View</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .table-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .no-bookings {
+      text-align: center;
+      color: gray;
+      font-style: italic;
+    }
+
+    .btn-clear {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Panel - Bookings</h1>
+    <div class="table-container">
+      <button class="btn btn-danger btn-clear" onclick="clearBookings()">Clear All Bookings</button>
+      <div id="bookingsTableContainer"></div>
+    </div>
+  </div>
+
+  <script>
+    function loadBookings() {
+      const container = document.getElementById('bookingsTableContainer');
+      const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+
+      if (bookings.length === 0) {
+        container.innerHTML = '<p class="no-bookings">No bookings found.</p>';
+        return;
+      }
+
+      let tableHTML = `
+        <table class="table table-striped table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Guests</th>
+              <th>Restaurant</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      bookings.forEach((booking, index) => {
+        tableHTML += `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${booking.name || '—'}</td>
+            <td>${booking.date || '—'}</td>
+            <td>${booking.time || '—'}</td>
+            <td>${booking.guests || '—'}</td>
+            <td>${booking.restaurant || '—'}</td>
+            <td><button class="btn btn-sm btn-danger" onclick="deleteBooking(${index})">Delete</button></td>
+          </tr>
+        `;
+      });
+
+      tableHTML += `</tbody></table>`;
+      container.innerHTML = tableHTML;
+    }
+
+    function deleteBooking(index) {
+      const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+      bookings.splice(index, 1);
+      localStorage.setItem('bookings', JSON.stringify(bookings));
+      loadBookings();
+    }
+
+    function clearBookings() {
+      if (confirm("Are you sure you want to delete all bookings?")) {
+        localStorage.removeItem('bookings');
+        loadBookings();
+      }
+    }
+
+    window.onload = loadBookings;
+  </script>
+</body>
+</html>
