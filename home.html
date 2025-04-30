@@ -3,63 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESTAURANT</title>
+    <title>GETININ</title>
 
-    
-        <link rel="icon" href="/Users/aryansharma/Desktop/favicon.svg" type="image/svg+xml">
-        <meta name="theme-color" content="#ffffff"> 
-    
-      
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bokor&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bokor&family=Jaro:opsz@6..72&family=Pixelify+Sans:wght@400..700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
         body {
-            font-family: 'Times New Roman', Times, serif;
+
             margin: 0;
             padding: 0;
-            color: #fff;
-        }
-
-        nav {
-            background-color: #333; 
             color: white;
-            padding: 10px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            background-image: url(./4656.png);
+        }
+        header {
+            background-color:#333;
+            padding: 0px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 50px auto;
+        }
+        .vb{
             display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
-
-        nav h1 {
-            margin: 0;
-            font-size: 35px;
+        #bm{
+            margin-left: 800px;
+            margin-top: 15px;
         }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
+        #cx{
+            font-family: "Jaro", sans-serif; 
+            font-size: 30px;
         }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            background-color: #333; 
+        #f{
+            padding: 10px 30px;
+            background-color: #333;
+            border: none;
             color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px; 
-            transition: background-color 0.3s, transform 0.3s;
+            background-color:#333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
+        #f:hover{
+            animation: bounceOut 2s infinite;
+        }
+        #x{
+            animation: heartBeat 1s infinite;
 
-        nav ul li a:hover {
-            background-color: #f17b40;
-            transform: scale(1.05); 
+        }
+        #f:hover {
+            background-color: #e29f4d;
         }
 
         footer {
@@ -80,7 +87,7 @@
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-            background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=jpg&q=60&w=3000');
+       
             background-size: cover;
             background-position: center;
             padding: 2rem;
@@ -104,21 +111,52 @@
             font-size: 1.2rem;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         }
-
-        .btn {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 3px;
-            transition: background-color 0.3s;
-            margin-top: 20px;
+        #vb{
+            font-family: "Jaro", sans-serif; 
+            font-size: 40px;
+            margin-top: 10px;
+        }
+        .card {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 10px;
+            background: transparent;
+            background-color: black;  
+        }
+        
+        .card-group {
+            display: flex;           
+            flex-wrap: wrap;         
+            gap: 20px;               
+            width: 1400px;
+            
+            margin-top: 10px;
+            margin-left: 50px;
+            margin-bottom: 10px;
+        }
+        .card-title{
+            color: whitesmoke;
+            text-align: center;
+        }
+        .card-text{
+            color: whitesmoke;   
+        }
+        #bcv{
+            color: whitesmoke;  
         }
 
-        .btn:hover {
-            background-color: #e29f4d;
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
+        
         @media (max-width: 768px) {
             nav h1 {
                 font-size: 28px;
@@ -157,28 +195,64 @@
 <body>
     <header>
         <nav>
-            <h1>GETININ</h1>
-            <ul>
-                <li><a href="#home" class="btn">HOME</a></li>
-                <li><a href="/booking.html" class="btn">BOOK NOW</a></li>
-                <li><a href="/about.html" class="btn">ABOUT US</a></li>
-                <li><a href="#contact" class="btn">CONTACT US</a></li>
-                <li><a href="/faq.html" class="btn">FAQs</a></li>
-                <li><a href="/login.html" class="btn">LOGIN</a></li>
-                <li><a href="/signup.html" class="btn">SIGN UP</a></li>
-            </ul>
+            <div class="vb">
+                <div><img id="x" src="./WhatsApp_Image_2024-11-27_at_00.06.37_f4dfe2aa-removebg-preview.png" alt="" width="80px"></div>
+                <div id="cx"></div><div id="vb">GETININ</div>
+                <div id="bm">
+                    <a href="./about.html"><button id="f">ABOUT US</button></a>
+                    <a href="./contact.html"><button id="f">CONTACT US</button></a>
+                    <a href="./faq.html"><button id="f">FAQs</button></a>
+                    <a href="./login.html"><button id="f">LOGIN</button></a>
+                    <a href="./signup.html"><button id="f">SIGNUP</button></a>
+                </div>
+            </div>
         </nav>
     </header>
 
     <div class="hero">
         <div class="hero-content">
             <h2>Welcome To Our Restaurant Reservation System</h2>
-            <a href="/booking.html" class="btn">Start Booking</a>
+            <a href="./signup.html"><button id="f">Start Booking</button></a>
         </div>
     </div>
+    <div class="card-group">
+        <div class="card">
+          <img src="./image.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">HOPS AND GRAINS</h5>
+            <p class="card-text">RATING *****</p>
+          </div>
+          <button id="f">Start Booking</button>
+          <div class="card-footer">
+            <small class="text-body-secondary"><p id="bcv"> Last updated 3 mins ago</p></small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./123.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">CATCH 22</h5>
+            <p class="card-text">RATING *****</p>
+          </div>
+          <button id="f">Start Booking</button>
+          <div class="card-footer">
+            <small class="text-body-secondary"><p id="bcv"> Last updated 3 mins ago</p></small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./4656.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">CASA BELLA VISTA</h5>
+            <p class="card-text">RATING ****</p>
+          </div>
+          <button id="f">Start Booking</button>
+          <div class="card-footer">
+            <small class="text-body-secondary"><p id="bcv"> Last updated 3 mins ago</p></small>
+          </div>
+        </div>
+      </div>
 
     <footer>
-        <p>&copy; 2025 RESTAURANT All rights reserved.</p>
+        <p>&copy; 2024 GETININ. All rights reserved.</p>
     </footer>
 </body>
 </html>
